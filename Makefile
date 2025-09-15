@@ -13,8 +13,22 @@
 
 SHELL := /bin/bash
 
-all:
+all: \
+  .git_submodule_init.done.log
 
-check:
+.PHONY: \
+  check-supply-chain
+
+.git_submodule_init.done.log: \
+  .gitmodules
+	git submodule update \
+	  --init
+	touch $@
+
+check: \
+  .git_submodule_init.done.log
+
+check-supply-chain: \
+  .git_submodule_init.done.log
 
 clean:

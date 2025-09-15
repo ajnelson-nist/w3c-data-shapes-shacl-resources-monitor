@@ -1,0 +1,3 @@
+[submodule "dependencies/data-shapes"]
+	path = dependencies/data-shapes
+	url = https://github.com/w3c/data-shapes.git
