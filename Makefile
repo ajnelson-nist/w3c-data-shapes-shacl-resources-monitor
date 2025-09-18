@@ -135,7 +135,7 @@ rdf-toolkit.jar: \
 	# Run pre-commit once to trigger a resource download.
 	source .venv-pre-commit/bin/activate \
 	  && pre-commit run \
-	    shacl-owl-ontology.ttl
+	    --file shacl-owl-ontology.ttl
 	test -r $@
 	touch -c $@
 
