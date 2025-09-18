@@ -1,0 +1,40 @@
+@prefix ex: <http://example.org/sh-shacl-owl-coverage/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/sh-shacl-owl-coverage>
+	a owl:Ontology ;
+	rdfs:comment "A shapes graph to confirm SHACL classes and properties are also cast with OWL types."@en ;
+	.
+
+ex:OwlClassIsShaclClassShape
+	a sh:NodeShape ;
+	rdfs:comment "Every OWL Class must also be an RDFS Class."@en ;
+	sh:class rdfs:Class ;
+	sh:targetClass owl:Class ;
+	.
+
+ex:OwlPropertyIsShaclPropertyShape
+	a sh:NodeShape ;
+	rdfs:comment "Every OWL Annotation Property must also be an RDF Property."@en ;
+	sh:class rdf:Property ;
+	sh:targetClass owl:AnnotationProperty ;
+	.
+
+ex:ShaclClassIsOwlClassShape
+	a sh:NodeShape ;
+	rdfs:comment "Every RDFS Class must also be an OWL Class."@en ;
+	sh:class owl:Class ;
+	sh:targetClass rdfs:Class ;
+	.
+
+ex:ShaclPropertyIsOwlPropertyShape
+	a sh:NodeShape ;
+	rdfs:comment "Every RDF Property must also be an OWL Annotation Property."@en ;
+	sh:class owl:AnnotationProperty ;
+	sh:targetClass rdf:Property ;
+	.
+

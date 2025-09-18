@@ -20,6 +20,8 @@ The motivation is that there are resources being maintained at two repositories.
 
 This repository operates downstream from the above resources, testing that implementation in the second location remains consistent with the "Upstream" implementation state of the primary location.
 
+The first resource with cross-repository dependencies being monitored is the minimal OWL profile of SHACL, further described in [data-shapes Issue 246](https://github.com/w3c/data-shapes/issues/246).
+
 
 #### Maturity
 
@@ -52,6 +54,8 @@ make check
 ```
 
 The above workflow runs as a Continuous Integration check on a schedule.
+
+Another workflow runs to check the "Supply chain" of this repository's dependencies.  Primarily, the supply chain is the state of the two cross-checked repositories, which are tracked as Git submodules pinned to last-reviewed states.  To run this recipe manually, follow the instruction block above, but run `make check-supply-chain` instead of `make check`.
 
 
 ## Contact information
