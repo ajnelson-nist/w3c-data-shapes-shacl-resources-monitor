@@ -62,7 +62,7 @@ Another workflow runs to check the "Supply chain" of this repository's dependenc
 
 ## Contact information
 
-[Alex Nelson](https://www.nist.gov/people/alexander-nelson), Information Technology Laboratory, Computer Security Division, Security Components and Mechanisms Group, alexander.nelson@nist.gov.
+[Alex Nelson](https://www.nist.gov/people/alexander-nelson) (ORCID: [https://orcid.org/0000-0002-3771-570X](https://orcid.org/0000-0002-3771-570X)), Information Technology Laboratory, Computer Security Division, Security Components and Mechanisms Group, alexander.nelson@nist.gov.
 
 Feedback is welcome as GitHub Issues on this repository.
 
