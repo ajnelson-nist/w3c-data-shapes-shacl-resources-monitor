@@ -4,11 +4,59 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+sh:JSConstraint
+	a rdfs:Class ;
+	.
+
+sh:JSExecutable
+	a rdfs:Class ;
+	.
+
+sh:JSFunction
+	a rdfs:Class ;
+	.
+
+sh:JSLibrary
+	a rdfs:Class ;
+	.
+
+sh:JSRule
+	a rdfs:Class ;
+	.
+
+sh:JSTarget
+	a rdfs:Class ;
+	.
+
+sh:JSTargetType
+	a rdfs:Class ;
+	.
+
+sh:JSValidator
+	a rdfs:Class ;
+	.
+
 sh:filterShape
 	a rdf:Property ;
 	.
 
 sh:intersection
+	a rdf:Property ;
+	.
+
+sh:js
+	a rdf:Property ;
+	.
+
+sh:jsFunctionName
+	a rdf:Property ;
+	.
+
+sh:jsLibrary
+	a rdf:Property ;
+	.
+
+sh:jsLibraryURL
 	a rdf:Property ;
 	.
 

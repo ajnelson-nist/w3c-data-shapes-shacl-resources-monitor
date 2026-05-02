@@ -4,6 +4,62 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+sh:JSConstraint
+	a
+		owl:Class ,
+		owl:DeprecatedClass
+		;
+	.
+
+sh:JSExecutable
+	a
+		owl:Class ,
+		owl:DeprecatedClass
+		;
+	.
+
+sh:JSFunction
+	a
+		owl:Class ,
+		owl:DeprecatedClass
+		;
+	.
+
+sh:JSLibrary
+	a
+		owl:Class ,
+		owl:DeprecatedClass
+		;
+	.
+
+sh:JSRule
+	a
+		owl:Class ,
+		owl:DeprecatedClass
+		;
+	.
+
+sh:JSTarget
+	a
+		owl:Class ,
+		owl:DeprecatedClass
+		;
+	.
+
+sh:JSTargetType
+	a
+		owl:Class ,
+		owl:DeprecatedClass
+		;
+	.
+
+sh:JSValidator
+	a
+		owl:Class ,
+		owl:DeprecatedClass
+		;
+	.
+
 sh:filterShape
 	a
 		owl:AnnotationProperty ,
@@ -12,6 +68,34 @@ sh:filterShape
 	.
 
 sh:intersection
+	a
+		owl:AnnotationProperty ,
+		owl:DeprecatedProperty
+		;
+	.
+
+sh:js
+	a
+		owl:AnnotationProperty ,
+		owl:DeprecatedProperty
+		;
+	.
+
+sh:jsFunctionName
+	a
+		owl:AnnotationProperty ,
+		owl:DeprecatedProperty
+		;
+	.
+
+sh:jsLibrary
+	a
+		owl:AnnotationProperty ,
+		owl:DeprecatedProperty
+		;
+	.
+
+sh:jsLibraryURL
 	a
 		owl:AnnotationProperty ,
 		owl:DeprecatedProperty
