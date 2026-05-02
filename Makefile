@@ -176,12 +176,14 @@ shacl-owl-properties.ttl: \
 shacl-owl.ttl: \
   rdf-toolkit.jar \
   shacl-owl-classes.ttl \
+  shacl-owl-deprecated-concepts.ttl \
   shacl-owl-properties.ttl \
   shacl-owl-ontology.ttl
 	source venv/bin/activate \
 	  && rdfpipe \
 	    --output-format turtle \
 	    shacl-owl-ontology.ttl \
+	    shacl-owl-deprecated-concepts.ttl \
 	    shacl-owl-classes.ttl \
 	    shacl-owl-properties.ttl \
 	    > ___$@
@@ -207,11 +209,13 @@ shacl-owl.ttl: \
 # catching when properties are proposed, implemented, but later removed.
 shacl-rdfs-and-owl.ttl: \
   $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
+  shacl-deprecated-concepts.ttl \
   shacl-owl.ttl \
   shapes/sh-shacl-owl.ttl
 	source venv/bin/activate \
 	  && rdfpipe \
 	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
+	    shacl-deprecated-concepts.ttl \
 	    shacl-owl.ttl \
 	    > _$@
 	source venv/bin/activate \
