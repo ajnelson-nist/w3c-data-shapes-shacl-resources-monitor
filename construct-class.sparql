@@ -11,6 +11,7 @@ WHERE {
 	} UNION {
 		?nOtherClass rdfs:subClassOf ?nClass .
 	}
+	FILTER (?nClass != owl:Ontology)
 	FILTER (?nClass != rdfs:Class)
 	FILTER (?nClass != rdfs:Resource)
 }
