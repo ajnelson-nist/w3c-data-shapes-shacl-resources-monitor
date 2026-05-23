@@ -144,13 +144,15 @@ rdf-toolkit.jar: \
 shacl-owl-classes.ttl: \
   .venv.done.log \
   construct-class.sparql \
-  $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl
+  $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
+  $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl
 	source venv/bin/activate \
 	  && case_sparql_construct \
 	    --built-version none \
 	    _$@ \
 	    construct-class.sparql \
-	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl
 	mv _$@ $@
 
 # This recipe intentionally left blank.  This file is a hard-coded
@@ -162,12 +164,14 @@ shacl-owl-ontology.ttl:
 shacl-owl-properties.ttl: \
   .venv.done.log \
   construct-property.sparql \
-  $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl
+  $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
+  $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl
 	source venv/bin/activate \
 	  && case_sparql_construct \
 	    _$@ \
 	    construct-property.sparql \
-	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl
 	mv _$@ $@
 
 # This file is the combined resource meant to be provided via the
@@ -210,12 +214,14 @@ shacl-owl.ttl: \
 # catching when properties are proposed, implemented, but later removed.
 shacl-rdfs-and-owl.ttl: \
   $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
+  $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl \
   shacl-deprecated-concepts.ttl \
   shacl-owl.ttl \
   shapes/sh-shacl-owl.ttl
 	source venv/bin/activate \
 	  && rdfpipe \
 	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl \
 	    shacl-deprecated-concepts.ttl \
 	    shacl-owl.ttl \
 	    > _$@
