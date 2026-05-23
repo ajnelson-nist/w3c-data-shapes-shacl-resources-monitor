@@ -1,8 +1,21 @@
 PREFIX owl:  <http://www.w3.org/2002/07/owl#>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
 CONSTRUCT {
-	?nProperty a owl:AnnotationProperty .
+	?nProperty a ?nPropertyType .
 }
 WHERE {
 	?nProperty a rdf:Property .
+	# Special case handling for sh:conformsTo is dependent on the
+	# eventual resolution of these Issues:
+	# * https://github.com/w3c/dx-prof/issues/29
+	# * https://github.com/w3c/dx-prof/issues/59
+	BIND(
+		IF(
+			?nProperty = sh:conformsTo ,
+			owl:ObjectProperty ,
+			owl:AnnotationProperty
+		)
+		AS ?nPropertyType
+	)
 }

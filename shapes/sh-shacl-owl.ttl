@@ -33,8 +33,22 @@ ex:ShaclClassIsOwlClassShape
 
 ex:ShaclPropertyIsOwlPropertyShape
 	a sh:NodeShape ;
-	rdfs:comment "Every RDF Property must also be an OWL Annotation Property."@en ;
-	sh:class owl:AnnotationProperty ;
+	rdfs:comment "Every RDF Property must also be an OWL Property."@en ;
+	sh:message "Every RDF Property must also be one of OWL AnnotationProperty, DatatypeProperty, or ObjectProperty."@en ;
 	sh:targetClass rdf:Property ;
+	sh:xone (
+		[
+			a sh:NodeShape ;
+			sh:class owl:AnnotationProperty ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class owl:DatatypeProperty ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class owl:ObjectProperty ;
+		]
+	) ;
 	.
 

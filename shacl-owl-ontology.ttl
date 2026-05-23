@@ -1,6 +1,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://www.w3.org/ns/shacl-owl#>
@@ -8,5 +9,12 @@
 	rdfs:label "SHACL concepts as OWL"@en ;
 	rdfs:comment "This ontology graph can be used to supplement ontologies that mix OWL and SHACL, for the benefit of OWL tools that require all classes and properties be explicitly designated as OWL classes and one of the three OWL property types.  This graph designates all SHACL properties as OWL Annotation Properties, separating them from usage with OWL Restrictions and constraints on ranges."@en ;
 	owl:versionIRI <http://www.w3.org/ns/shacl-owl#1.2> ;
+	.
+
+sh:conformsTo
+	rdfs:seeAlso
+		<https://github.com/w3c/dx-prof/issues/29> ,
+		<https://github.com/w3c/dx-prof/issues/59>
+		;
 	.
 
