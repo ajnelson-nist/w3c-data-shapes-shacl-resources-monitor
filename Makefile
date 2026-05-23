@@ -145,14 +145,16 @@ shacl-owl-classes.ttl: \
   .venv.done.log \
   construct-class.sparql \
   $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
-  $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl
+  $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl \
+  $(data_shapes_srcdir)/shacl12-vocabularies/shnex-sparql.ttl
 	source venv/bin/activate \
 	  && case_sparql_construct \
 	    --built-version none \
 	    _$@ \
 	    construct-class.sparql \
 	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
-	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl \
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex-sparql.ttl
 	mv _$@ $@
 
 # This recipe intentionally left blank.  This file is a hard-coded
@@ -165,13 +167,15 @@ shacl-owl-properties.ttl: \
   .venv.done.log \
   construct-property.sparql \
   $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
-  $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl
+  $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl \
+  $(data_shapes_srcdir)/shacl12-vocabularies/shnex-sparql.ttl
 	source venv/bin/activate \
 	  && case_sparql_construct \
 	    _$@ \
 	    construct-property.sparql \
 	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
-	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl \
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex-sparql.ttl
 	mv _$@ $@
 
 # This file is the combined resource meant to be provided via the
@@ -215,6 +219,7 @@ shacl-owl.ttl: \
 shacl-rdfs-and-owl.ttl: \
   $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
   $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl \
+  $(data_shapes_srcdir)/shacl12-vocabularies/shnex-sparql.ttl \
   shacl-deprecated-concepts.ttl \
   shacl-owl.ttl \
   shapes/sh-shacl-owl.ttl
@@ -222,6 +227,7 @@ shacl-rdfs-and-owl.ttl: \
 	  && rdfpipe \
 	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl \
 	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex.ttl \
+	    $(data_shapes_srcdir)/shacl12-vocabularies/shnex-sparql.ttl \
 	    shacl-deprecated-concepts.ttl \
 	    shacl-owl.ttl \
 	    > _$@
