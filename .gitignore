@@ -1,4 +1,5 @@
 *.jar
+*.swp
 .*.done.log
 .venv-pre-commit
 shacl-owl-classes.ttl
