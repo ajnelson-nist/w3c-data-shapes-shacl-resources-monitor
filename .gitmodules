@@ -1,7 +1,7 @@
 [submodule "dependencies/data-shapes"]
 	path = dependencies/data-shapes
 	url = https://github.com/w3c/data-shapes.git
-	branch = issue-575-also-designate-classes
+	branch = gh-pages
 [submodule "dependencies/shacl-resources"]
 	path = dependencies/shacl-resources
 	url = https://github.com/w3c/shacl-resources.git

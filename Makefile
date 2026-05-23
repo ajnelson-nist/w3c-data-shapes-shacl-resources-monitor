@@ -147,6 +147,7 @@ shacl-owl-classes.ttl: \
   $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl
 	source venv/bin/activate \
 	  && case_sparql_construct \
+	    --built-version none \
 	    _$@ \
 	    construct-class.sparql \
 	    $(data_shapes_srcdir)/shacl12-vocabularies/shacl.ttl

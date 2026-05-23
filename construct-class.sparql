@@ -4,5 +4,13 @@ CONSTRUCT {
 	?nClass a owl:Class .
 }
 WHERE {
-	?nClass a rdfs:Class .
+	{
+		?nClass a rdfs:Class .
+	} UNION {
+		?nClass rdfs:subClassOf ?nOtherClass .
+	} UNION {
+		?nOtherClass rdfs:subClassOf ?nClass .
+	}
+	FILTER (?nClass != rdfs:Class)
+	FILTER (?nClass != rdfs:Resource)
 }
